@@ -5,23 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="683b8614-fa6a-4f4b-ae61-07d41cb77295" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/@types/IUser.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/modules/AuthModule.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/modules/UserModule.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/HomePage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/LoginPage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/ProfilePage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/RegisterPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Slider.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Slider.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/plugins/vuetify.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/plugins/vuetify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HomePage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +82,8 @@
       <workItem from="1682361151466" duration="19068000" />
       <workItem from="1682517137432" duration="327000" />
       <workItem from="1682517610595" duration="17858000" />
-      <workItem from="1682620812107" duration="45725000" />
+      <workItem from="1682620812107" duration="62661000" />
+      <workItem from="1684134642926" duration="23084000" />
     </task>
     <servers />
   </component>

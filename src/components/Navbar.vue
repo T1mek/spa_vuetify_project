@@ -1,8 +1,8 @@
 <script setup>
-import { computed, reactive, ref, render } from "vue";
+import { computed, onMounted, reactive, ref, render } from "vue";
 import { useStore } from "vuex";
-import { useRouter } from "vue-router";
-
+import { useRoute, useRouter } from "vue-router";
+const route = useRoute()
 const store = useStore();
 const router = useRouter();
 const user = computed(() => store.getters["user/USER"]);
@@ -12,6 +12,10 @@ const changePage = (title) => {
   if (title === "Профиль") {
     router.push("/profile");
   }
+  // if (route.fullPath === 'profile'){
+  //  items.unshift()
+  //  items.shift({title: 'Редактировать'})
+  // }
   if (title === "Выйти") {
     const logout ={
       data:[],
@@ -21,6 +25,9 @@ const changePage = (title) => {
     store.commit('user/dataUsers',logout);
   }
 };
+// onMounted(()=>{
+//
+// })
 </script>
 
 <template>

@@ -6,14 +6,14 @@ import LoginPage from "@/view/LoginPage.vue";
 
 const isAuthorized = localStorage.hasOwnProperty('token')
 
-// const authGuard = function(to,from,next) {
-//   if (!isAuthorized) {
-//    next({
-//      name: 'home'
-//    })
-//   }
-//   else next()
-// }
+const authGuard = function(to,from,next) {
+  if (!isAuthorized) {
+   next({
+     name: 'home'
+   })
+  }
+  else next()
+}
 
 
 const router = createRouter({
@@ -23,13 +23,12 @@ const router = createRouter({
       path:'/',
       name: 'home',
       component: HomePage,
-      // beforeEnter: authGuard
     },
     {
       path:'/profile',
       name:'profile',
       component: ProfilePage,
-      // beforeEnter: authGuard
+      beforeEnter: authGuard
     },
     {
       path:'/register',
