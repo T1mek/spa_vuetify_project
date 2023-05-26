@@ -2,12 +2,8 @@
 
 
 
-import { onMounted } from "vue";
-import axios from "axios";
-
-const props = defineProps({
+const { sliderContent } = defineProps({
   sliderContent:{
-    required: true,
     type: Array,
   },
 })
@@ -15,21 +11,20 @@ const props = defineProps({
 
 
 
-
 </script>
 
 <template>
-  <div class="dark">
-    <v-carousel height="800px" :show-arrows="false">
+  <v-container fluid class="dark pa-0" v-if="sliderContent" >
+    <v-carousel height="800px" :show-arrows="false" >
       <v-carousel-item
-        v-if="sliderContent ? sliderContent.length > 0 : null"
-        v-for="content in props.sliderContent"
+        v-for="content in sliderContent.slice(0,5)"
         :key="content.id"
         :src="`https://nextube.ru/api/v1/files/public/${content.preview['public_key']}`"
         cover
+
       >
-        <div class="d-flex flex-column justify-end ml-10 h-75">
-          <h2 class="mt-13 text-white w-75" v-text="content.name"></h2>
+        <v-row class="d-flex flex-column justify-end ml-10 h-75">
+          <h2 class="mt-13 text-white w-75">{{content.name}}</h2>
           <v-btn
             style="width: 200px; height: 48px"
             class="mt-6 bg-white border-0 text-black"
@@ -38,10 +33,10 @@ const props = defineProps({
           >
             Смотреть
           </v-btn>
-        </div>
+        </v-row>
       </v-carousel-item>
     </v-carousel>
-  </div>
+  </v-container>
 </template>
 
 <style>

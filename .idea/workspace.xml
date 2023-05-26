@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="683b8614-fa6a-4f4b-ae61-07d41cb77295" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Footer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/image/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/image/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/logo.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FullItems.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Slider.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Slider.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/items.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/novelties.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HomePage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,9 +27,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Vue Single File Component" />
         <option value="TypeScript File" />
         <option value="tsconfig.json" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -83,7 +89,13 @@
       <workItem from="1682517137432" duration="327000" />
       <workItem from="1682517610595" duration="17858000" />
       <workItem from="1682620812107" duration="62661000" />
-      <workItem from="1684134642926" duration="23084000" />
+      <workItem from="1684134642926" duration="23664000" />
+      <workItem from="1684408801304" duration="193000" />
+      <workItem from="1684437257407" duration="2057000" />
+      <workItem from="1684440487021" duration="880000" />
+      <workItem from="1684484490755" duration="78000" />
+      <workItem from="1684484645244" duration="18000" />
+      <workItem from="1684836531139" duration="38842000" />
     </task>
     <servers />
   </component>

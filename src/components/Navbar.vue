@@ -1,11 +1,22 @@
 <script setup>
-import { computed, onMounted, reactive, ref, render } from "vue";
+import { computed, onBeforeMount, onMounted, reactive, ref, render, watch } from "vue";
 import { useStore } from "vuex";
 import { useRoute, useRouter } from "vue-router";
 const route = useRoute()
 const store = useStore();
 const router = useRouter();
 const user = computed(() => store.getters["user/USER"]);
+const bg = ref('')
+
+const changeColorNavbar = ()=>{
+  if (document.documentElement.scrollTop>30){
+    bg.value ="backdrop-filter:blur(24px)"
+  }
+  else {
+    bg.value = "none"
+  }
+}
+
 
 const items = [{ title: "Профиль" }, { title: "Выйти" }];
 const changePage = (title) => {
@@ -25,58 +36,60 @@ const changePage = (title) => {
     store.commit('user/dataUsers',logout);
   }
 };
-// onMounted(()=>{
-//
-// })
+
+
+onMounted(()=>{
+  window.addEventListener('scroll',changeColorNavbar)
+})
 </script>
 
 <template>
-  <v-app-bar app dark flat color="transparent">
-    <v-container class="w-25 d-flex align-center justify-lg-space-between ml-6">
+  <v-app-bar app dark flat color="transparent" height="80" :style="bg">
+    <v-container class="d-flex align-center justify-lg-space-between ml-6">
       <router-link to="/">
         <img src="@/assets/image/logo.svg" alt="Logo" style="cursor: pointer" />
       </router-link>
-      <router-link class="a" to="/">Главная</router-link>
-      <a class="a">Шоу</a>
+<!--      <router-link class="a" to="/">Главная</router-link>-->
+<!--      <a class="a">Шоу</a>-->
     </v-container>
-    <v-spacer></v-spacer>
-    <v-card
-      style="border: 1px solid white; height: 30px; width: 220px"
-      color="transparent"
-      class="mx-auto rounded-pill"
-    >
-      <v-text-field
-        variant="solo"
-        bg-color="transparent"
-        density="compact"
-        placeholder="Поиск"
-        prepend-inner-icon="mdi-magnify"
-        hide-details
-        type="text"
-      ></v-text-field>
-    </v-card>
-    <div v-if="user.name" class="mr-13 ml-9">
-      <img v-if="user.image" src="" alt="" />
-      <v-btn id="menu-activator" color="white">
-        {{ user.name }}
-      </v-btn>
-      <v-menu activator="#menu-activator">
-        <v-list>
-          <v-list-item
-            v-for="(item, index) in items"
-            :key="index"
-            :value="index"
-          >
-            <v-list-item-title @click="changePage(item.title)">{{
-              item.title
-            }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
-    </div>
-    <router-link v-else to="/register" class="a mr-13 ml-9">
-      Войти
-    </router-link>
+<!--    <v-spacer></v-spacer>-->
+<!--    <v-card-->
+<!--      style="border: 1px solid white; height: 30px; width: 220px"-->
+<!--      color="transparent"-->
+<!--      class="mx-auto rounded-pill"-->
+<!--    >-->
+<!--      <v-text-field-->
+<!--        variant="solo"-->
+<!--        bg-color="transparent"-->
+<!--        density="compact"-->
+<!--        placeholder="Поиск"-->
+<!--        prepend-inner-icon="mdi-magnify"-->
+<!--        hide-details-->
+<!--        type="text"-->
+<!--      ></v-text-field>-->
+<!--    </v-card>-->
+<!--    <div v-if="user.name" class="mr-13 ml-9">-->
+<!--      <img v-if="user.image" src="" alt="" />-->
+<!--      <v-btn id="menu-activator" color="white">-->
+<!--        {{ user.name }}-->
+<!--      </v-btn>-->
+<!--      <v-menu activator="#menu-activator">-->
+<!--        <v-list>-->
+<!--          <v-list-item-->
+<!--            v-for="(item, index) in items"-->
+<!--            :key="index"-->
+<!--            :value="index"-->
+<!--          >-->
+<!--            <v-list-item-title @click="changePage(item.title)">{{-->
+<!--              item.title-->
+<!--            }}</v-list-item-title>-->
+<!--          </v-list-item>-->
+<!--        </v-list>-->
+<!--      </v-menu>-->
+<!--    </div>-->
+<!--    <router-link v-else to="/register" class="a mr-13 ml-9">-->
+<!--      Войти-->
+<!--    </router-link>-->
   </v-app-bar>
 </template>
 

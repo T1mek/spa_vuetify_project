@@ -1,5 +1,6 @@
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, reactive, ref } from "vue";
+import PluralHelper from "../helpers/PluralHelper";
 
 const props = defineProps({
   contents: {
@@ -20,65 +21,89 @@ const metaData = (data) => {
   return new Date(duration * 1000).toISOString().substring(14, 19);
 };
 const countViews = (data) => {
-  const { view } = data.reactions
-  return view
-}
-
+  const { view } = data.reactions;
+  return view;
+};
+onMounted(() => {});
 </script>
 
 <template>
-  <div class="slider">
-    <div class="d-flex" style="gap: 15px; height: 400px; width: 1750px">
-      <v-card
-        v-for="content in props.contents"
-        :key="content.id"
-        style="width: 400px; cursor: pointer"
-        class="mt-5 bg-black"
-      >
-        <v-img
-          class="text-white"
-          :src="getPic(content)"
-          cover
-          style="height: 228px"
-        >
-          <v-card-title
-            class="d-flex justify-end align-end h-100"
-            style="font-size: 13px"
+  <v-container
+    fluid class="slider d-flex">
+    <!--<div class="d-flex" style="gap: 15px; height: 400px; width: 1750px">-->
+    <v-card
+      v-for="content in props.contents"
+      :key="content.id"
+      min-width="400"
+      min-height="700"
+      class="d-flex bg-black ml-7"
+    >
+      <v-row>
+        <v-col v-for="n in 2" :key="n" cols="12" class="pt-0 mb-7 pointer">
+          <v-img
+            class="text-white w-100"
+            :src="getPic(content)"
+            cover
+            height="200"
+            width="400"
+            alt="Content"
           >
-            <div></div>
-            <div
-              style="height: 25px"
-              class="d-flex justify-center align-center bg-black rounded"
-            >
-              <span v-text="metaData(content)"></span>
-            </div>
-          </v-card-title>
-        </v-img>
+            <v-container class="h-100 d-flex justify-end align-end">
+              <!--   class="d-flex justify-center align-center bg-black rounded w-25 h-25"-->
+              <span class="text-h6 bg-black">{{ metaData(content) }}</span>
+            </v-container>
+          </v-img>
 
-        <v-card-text style="gap: 15px" class="d-flex mt-3 pa-0"
-          ><div>
+          <v-card-title class="d-flex">
             <v-img
-              class="pa-4 bg-secondary rounded-circle d-inline-block"
+              class="bg-secondary rounded-circle mt-3"
               :src="getAvatar(content)"
               cover
+              alt="Avatar"
+              height="36"
+              max-width="36"
             />
-          </div>
-          <v-card-title
-            style="width: 357px; white-space: pre-line"
-            class="pa-0"
-          >
-            <h4 v-text="content.name"></h4>
-            <p class="font-weight-thin" v-text="content.channel['name']"></p>
-            <p class="font-weight-thin"> {{countViews(content)}} Просмотров</p>
+            <v-col class="w-75 pr-0">
+              <h4 class="text-wrap">{{ content.name }}</h4>
+              <p class="font-weight-thin">{{ content.channel["name"] }}</p>
+              <v-row class="d-flex px-0 pl-3 mt-0">
+                <p class="font-weight-thin">
+                  {{ PluralHelper.watchCount(countViews(content)) }}
+                </p>
+                <p class="font-weight-thin dot">
+                  {{ PluralHelper.timeAgo(content.creation_date) }}
+                </p>
+              </v-row>
+            </v-col>
           </v-card-title>
-        </v-card-text>
-      </v-card>
-    </div>
 
-  </div>
+          <!--        <v-card-text style="gap: 15px" class="d-flex mt-3 pa-0"-->
+          <!--          ><div>-->
+          <!--            <v-img-->
+          <!--              class="pa-4 bg-secondary rounded-circle d-inline-block"-->
+          <!--              :src="getAvatar(content)"-->
+          <!--              cover-->
+          <!--            />-->
+          <!--          </div>-->
+          <!--          <v-card-title class="pa-0">-->
+          <!--            <h4 class="">{{ content.name }}</h4>-->
+          <!--            <p class="font-weight-thin" v-text="content.channel['name']"></p>-->
+          <!--            <p class="font-weight-thin">{{ countViews(content) }} Просмотров</p>-->
+          <!--          </v-card-title>-->
+          <!--        </v-card-text>-->
+        </v-col>
+      </v-row>
+    </v-card>
+
+    <!--</div>-->
+  </v-container>
 </template>
 
-<style>
+<style scoped>
+.dot::before {
+  content: "•";
+  margin: 0 4px;
+}
 v-responsive__sizer {
   border-radius: 20px;
 }
