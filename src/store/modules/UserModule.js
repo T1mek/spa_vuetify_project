@@ -28,7 +28,7 @@ export const UserModule = {
     async fetchData({commit}) {
       if(localStorage.getItem('token')){
       const { data } = await axios.get(
-        "https://nextube.ru/api/v1/users/profile",
+        "https://backend.nextube.ru/api/v1/users/profile",
         {
           headers: {
             "X-Session-Token": localStorage.getItem("token"),

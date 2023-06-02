@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="683b8614-fa6a-4f4b-ae61-07d41cb77295" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Footer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/image/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/image/logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/logo.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FullItems.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Slider.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Slider.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/items.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/novelties.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/modules/AuthModule.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/AuthModule.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/modules/UserModule.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/modules/UserModule.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HomePage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +92,11 @@
       <workItem from="1684440487021" duration="880000" />
       <workItem from="1684484490755" duration="78000" />
       <workItem from="1684484645244" duration="18000" />
-      <workItem from="1684836531139" duration="38842000" />
+      <workItem from="1684836531139" duration="39061000" />
+      <workItem from="1685126030589" duration="710000" />
+      <workItem from="1685276878205" duration="218000" />
+      <workItem from="1685442423958" duration="122000" />
+      <workItem from="1685520139053" duration="10113000" />
     </task>
     <servers />
   </component>

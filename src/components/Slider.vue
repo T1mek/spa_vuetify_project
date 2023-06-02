@@ -19,7 +19,7 @@ const { sliderContent } = defineProps({
       <v-carousel-item
         v-for="content in sliderContent.slice(0,5)"
         :key="content.id"
-        :src="`https://nextube.ru/api/v1/files/public/${content.preview['public_key']}`"
+        :src="`https://backend.nextube.ru/api/v1/files/public/${content.preview['public_key']}`"
         cover
 
       >

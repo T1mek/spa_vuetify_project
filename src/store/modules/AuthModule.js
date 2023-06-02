@@ -15,7 +15,7 @@ export const AuthModule = {
   actions: {
     async register({ commit }, user) {
       const { data } = await axios.post(
-        "https://nextube.ru/users/register",
+        "https://backend.nextube.ru/users/register",
         {
           login:user.email,
           password:user.password,
@@ -29,7 +29,7 @@ export const AuthModule = {
     },
     async login({commit},user) {
       const { data } = await axios.post(
-        "https://nextube.ru/users/login",
+        "https://backend.nextube.ru/users/login",
         {
           login:user.email,
           password:user.password

@@ -6,6 +6,7 @@ import { computed, onBeforeMount, onMounted, reactive, ref } from "vue";
 
 import { useStore } from "vuex";
 import axios from "axios";
+import { useDisplay } from "vuetify";
 
 const store = useStore();
 const populars = ref();
@@ -15,14 +16,15 @@ const playlist = async () => {
   const offset = 0;
   // const offset =Math.floor(Math.random()*15);
   const { data: dataPopulars } = await axios.get(
-    `https://nextube.ru/api/v1/contents/playlists/popular?limit=${limit}&offset=${offset}`
+    `https://backend.nextube.ru/api/v1/contents/playlists/popular?limit=${limit}&offset=${offset}`
   );
   const { data: dataRecommendations } = await axios.get(
-    `https://nextube.ru/api/v1/contents/playlists/recommendations?limit=${limit}&offset=${offset}`
+    `https://backend.nextube.ru/api/v1/contents/playlists/recommendations?limit=${limit}&offset=${offset+2}`
   );
   populars.value = dataPopulars.data;
   recommendations.value = dataRecommendations.data;
 };
+const { name } = useDisplay();
 
 onBeforeMount(() => {});
 
@@ -37,7 +39,8 @@ onMounted(() => {
 
   <Slider :sliderContent="populars" />
   <v-container fluid style="z-index: 10" class="bg-black">
-    <v-row style="margin-top: -90px" class="mx-6">
+    <v-row style="margin-top: -90px"
+           :class="name === 'xs' ? `mx-0` : `mx-7`">
       <h6 class="text-white text-h6">ПОПУЛЯРНЫЕ</h6>
       <Dashboard :contents="populars" />
       <h6 class="text-white text-h6 mt-12">РЕКОМЕНДАЦИИ</h6>

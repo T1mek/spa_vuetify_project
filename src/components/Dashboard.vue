@@ -1,6 +1,7 @@
 <script setup>
-import { onMounted, reactive, ref } from "vue";
+import { computed, onMounted, reactive, ref } from "vue";
 import PluralHelper from "../helpers/PluralHelper";
+import { useDisplay } from "vuetify";
 
 const props = defineProps({
   contents: {
@@ -10,11 +11,11 @@ const props = defineProps({
 
 const getPic = (pic) => {
   const { public_key } = pic.preview;
-  return "https://nextube.ru/api/v1/files/public/" + public_key;
+  return "https://backend.nextube.ru/api/v1/files/public/" + public_key;
 };
 const getAvatar = (data) => {
   const { avatar } = data.channel;
-  return "https://nextube.ru/api/v1/files/public/" + avatar.public_key;
+  return "https://backend.nextube.ru/api/v1/files/public/" + avatar.public_key;
 };
 const metaData = (data) => {
   const { duration } = data.metadata;
@@ -24,28 +25,33 @@ const countViews = (data) => {
   const { view } = data.reactions;
   return view;
 };
-onMounted(() => {});
+const { name } = useDisplay();
+
+
+
+onMounted(() => {
+
+
+});
 </script>
 
 <template>
-  <v-container
-    fluid class="slider d-flex">
+  <v-container fluid class="slider d-flex">
     <!--<div class="d-flex" style="gap: 15px; height: 400px; width: 1750px">-->
     <v-card
       v-for="content in props.contents"
       :key="content.id"
-      min-width="400"
-      min-height="700"
-      class="d-flex bg-black ml-7"
+      :min-width="name === 'xs' ? 360: 400"
+      :min-height="700"
+      class="d-flex bg-black"
+      style="gap: 25px"
     >
       <v-row>
-        <v-col v-for="n in 2" :key="n" cols="12" class="pt-0 mb-7 pointer">
+        <v-col v-for="n in 2" :key="n" cols="12" class="pt-0 mb-7 pointer ">
           <v-img
-            class="text-white w-100"
+            class="text-white h-50 "
             :src="getPic(content)"
             cover
-            height="200"
-            width="400"
             alt="Content"
           >
             <v-container class="h-100 d-flex justify-end align-end">

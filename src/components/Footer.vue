@@ -8,7 +8,7 @@
       <v-btn
         v-for="icon in icons"
         :key="icon"
-        class="mx-4"
+        class="mx-0"
         :icon="icon"
         variant="plain"
         size="small"
@@ -22,6 +22,9 @@
 </template>
 
 <script setup>
+import { useDisplay } from "vuetify";
+
+const {name}=useDisplay()
 const icons = ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"];
 </script>
 
