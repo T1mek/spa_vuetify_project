@@ -17,6 +17,9 @@ import Footer from "@/components/Footer.vue";
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background:black;
+}
 .pointer {
   cursor: pointer;
 }

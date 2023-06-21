@@ -7,6 +7,8 @@ import { computed, onBeforeMount, onMounted, reactive, ref } from "vue";
 import { useStore } from "vuex";
 import axios from "axios";
 import { useDisplay } from "vuetify";
+import ProductIntroduction from "@/components/ProductIntroduction.vue";
+import SubscriptionInformation from "@/components/SubscriptionInformation.vue";
 
 const store = useStore();
 const populars = ref();
@@ -37,15 +39,17 @@ onMounted(() => {
 
 <template>
 
-  <Slider :sliderContent="populars" />
+  <ProductIntroduction/>
+<!--  <Slider :sliderContent="populars" />-->
   <v-container fluid style="z-index: 10" class="bg-black">
-    <v-row style="margin-top: -90px"
+    <v-row
            :class="name === 'xs' ? `mx-0` : `mx-7`">
       <h6 class="text-white text-h6">ПОПУЛЯРНЫЕ</h6>
       <Dashboard :contents="populars" />
-      <h6 class="text-white text-h6 mt-12">РЕКОМЕНДАЦИИ</h6>
-      <Dashboard :contents="recommendations" />
+<!--      <h6 class="text-white text-h6 mt-12">РЕКОМЕНДАЦИИ</h6>-->
+<!--      <Dashboard :contents="recommendations" />-->
     </v-row>
+    <SubscriptionInformation/>
     <!--    <h6 class="text-white text-h6 mt-12">ЭКСКЛЮЗИВЫ</h6>-->
     <!--    <FullItems />-->
     <!--    <h6 class="text-white text-h6 mt-12">АЛЕКСЕЙ СТАХОВИЧ</h6>-->

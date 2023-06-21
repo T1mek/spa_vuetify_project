@@ -46,8 +46,9 @@ onMounted(()=>{
 <template>
   <v-app-bar app dark flat color="transparent" height="80" :style="bg">
     <v-container class="d-flex align-center justify-lg-space-between ml-6">
-      <router-link to="/">
-        <img src="@/assets/image/logo.svg" alt="Logo" style="cursor: pointer" />
+      <router-link to="/" class="pointer d-flex text-decoration-none">
+        <img src="@/assets/image/logo.jpeg" alt="Logo" style="border-radius: 10px" width="46" />
+        <h1 class="ml-2 text-white" >NEXTUBE</h1>
       </router-link>
 <!--      <router-link class="a" to="/">Главная</router-link>-->
 <!--      <a class="a">Шоу</a>-->
